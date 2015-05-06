@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   
   def create
+    
     super do |resource|
       if params[:plan]
         resource.plan_id = params[:plan]
@@ -11,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         end
       end
     end
+    
   end
   
 end
